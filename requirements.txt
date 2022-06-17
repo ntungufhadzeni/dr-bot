@@ -2,7 +2,6 @@ appnope==0.1.2
 backcall==0.2.0
 ChatterBot==1.0.4
 chatterbot-corpus==1.2.0
-click==7.1.2
 decorator==4.4.2
 ipython==7.19.0
 ipython-genutils==0.2.0
