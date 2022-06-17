@@ -11,7 +11,7 @@ app = Flask(__name__)
 def incoming_sms():
     """Send a dynamic reply to an incoming text message"""
     # Get the message the user sent our Twilio number
-    user_text = request.args.get('msg')
+    user_text = request.form['Body']
 
     # Start our TwiML response
     resp = MessagingResponse()
@@ -24,5 +24,4 @@ def incoming_sms():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(debug=True, host='0.0.0.0', port=port)
+    app.run()
