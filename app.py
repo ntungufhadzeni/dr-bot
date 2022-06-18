@@ -10,7 +10,7 @@ app = Flask(__name__)
 chatbot = create_bot()
 
 # train
-train_with_corpus(chatbot, 'chatterbot.corpus.english')
+# train_with_corpus(chatbot, 'chatterbot.corpus.english')
 train_with_csv(chatbot, 'data/mental_health_faq.csv')
 
 
@@ -19,6 +19,7 @@ def incoming_sms():
     """Send a dynamic reply to an incoming text message"""
     # Get the message the user sent our Twilio number
     user_text = request.form['Body']
+    # user_text = request.args.get('Body')
 
     # Start our TwiML response
     resp = MessagingResponse()
