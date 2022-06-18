@@ -1,10 +1,17 @@
-from chatbot import chatbot
+from service import create_bot
+from train import train_with_csv, train_with_corpus
 
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
-import os
 
 app = Flask(__name__)
+
+# create the bot
+chatbot = create_bot()
+
+# train
+train_with_corpus(chatbot, 'chatterbot.corpus.english')
+train_with_csv(chatbot, 'data/mental_health_faq.csv')
 
 
 @app.route("/sms", methods=['GET', 'POST'])
