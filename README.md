@@ -1,3 +1,6 @@
+# Dr. Bot 🤖
+A chat bot that answers mental health frequently asked questions via sms.
+
 # How to run the project?
 1. Login to server
 ```
